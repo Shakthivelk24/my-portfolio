@@ -2,6 +2,8 @@ import js from '@eslint/js'
 import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
+import react from 'eslint-plugin-react' // ✅ Add this
+
 import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
@@ -10,6 +12,7 @@ export default defineConfig([
     files: ['**/*.{js,jsx}'],
     extends: [
       js.configs.recommended,
+      react.configs.recommended, // ✅ Add this
       reactHooks.configs['recommended-latest'],
       reactRefresh.configs.vite,
     ],
@@ -20,6 +23,11 @@ export default defineConfig([
         ecmaVersion: 'latest',
         ecmaFeatures: { jsx: true },
         sourceType: 'module',
+      },
+    },
+    settings: {
+      react: {
+        version: 'detect', // ✅ Add this
       },
     },
     rules: {
