@@ -1,5 +1,5 @@
-import { motion , AnimatePresence } from "framer-motion";
-import { FiGithub, FiTwitter, FiLinkedin, FiMenu, FiX } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiGithub, FiLinkedin, FiMenu, FiX, FiInstagram } from "react-icons/fi";
 import { useState } from "react";
 
 const Header = () => {
@@ -47,7 +47,7 @@ const Header = () => {
                 damping: 20,
                 delay: 0.7 + index * 0.2,
               }}
-              className="relative text-gray-800 dark:text-gray-200 hover:violet-600 dark:hover:text-violet-400 transition-colors duration-300 group"
+              className="relative text-gray-800 dark:text-gray-200 hover:violet-600 dark:hover:text-blue-300 transition-colors duration-300 group"
               href="#"
             >
               {item}
@@ -66,7 +66,8 @@ const Header = () => {
               duration: 0.8,
             }}
             className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
-            href="#"
+            href="https://github.com/Shakthivelk24"
+            target="_blank"
           >
             <FiGithub className="w-5 h-5 " />
           </motion.a>
@@ -78,9 +79,10 @@ const Header = () => {
               duration: 0.8,
             }}
             className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
-            href="#"
+            href="https://www.instagram.com/shakthi024/"
+            target="_blank"
           >
-            <FiTwitter className="w-5 h-5 " />
+            <FiInstagram className="w-5 h-5 " />
           </motion.a>
           <motion.a
             initial={{ opacity: 0, scale: 0.5 }}
@@ -90,7 +92,8 @@ const Header = () => {
               duration: 0.8,
             }}
             className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
-            href="#"
+            href="https://www.linkedin.com/in/shakthi-vel-k-b35484343/"
+            target="_main"
           >
             <FiLinkedin className="w-5 h-5 " />
           </motion.a>
@@ -106,7 +109,7 @@ const Header = () => {
               stiffness: 100,
               damping: 15,
             }}
-            className="ml-4 px-4 py-2 rounded-xl bg-gradient-to-r from-gray-400 to-gray-100 text-violet-700 font-bold hover:from-violet-700 hover:to-purple-700 hover:text-white transition-all duration-500 "
+            className="ml-4 px-4 py-2 rounded-xl bg-gradient-to-r from-gray-400 to-gray-100 text-blue-700 font-bold hover:from-blue-700 hover:to-blue-700 hover:text-white transition-all duration-500 "
           >
             Hire Me
           </motion.button>
@@ -139,7 +142,7 @@ const Header = () => {
           {["Home", "About", "Projects", "Contact"].map((item) => (
             <a
               key={item}
-              className="text-gray-300 font-medium py-2"
+              className="text-gray-300 font-medium py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 hover:bg-zinc-800"
               onClick={toggleMenu}
               href="#"
             >
@@ -149,13 +152,13 @@ const Header = () => {
         </nav>
         <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
           <div className="flex space-x-5">
-            <a href="#">
+            <a href="https://github.com/Shakthivelk24">
               <FiGithub className="w-5 h-5 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300" />
             </a>
-            <a href="#">
-              <FiTwitter className="w-5 h-5 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300" />
+            <a href="https://www.instagram.com/shakthi024/">
+              <FiInstagram className="w-5 h-5 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300" />
             </a>
-            <a href="#">
+            <a href="https://www.linkedin.com/in/shakthi-vel-k-b35484343/">
               <FiLinkedin className="w-5 h-5 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300" />
             </a>
             <button
@@ -163,7 +166,7 @@ const Header = () => {
                 toggleMenu();
                 openContactForm();
               }}
-              className="mt-4 block w-full px-4 py-2 rounded-lg bg-gradient-to-r from-violet-600 to-violet-400 font-bold"
+              className="mt-4 block w-full px-4 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-400 font-bold"
             >
               Contact Me
             </button>
@@ -172,88 +175,92 @@ const Header = () => {
       </motion.div>
       {/* Contact Form */}
       <AnimatePresence>
-      {contactFormOpen && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="fixed inset-0 bg-black/50 backgrount-blur-sm z-50 flex items-center justify-center p-4"
-        >
+        {contactFormOpen && (
           <motion.div
-          initial={ {scale:0.8,opacity: 0, y: 30 }}
-           animate={{scale:1,opacity:1,y:0}}
-           exit={{scale:0.8,opacity:0,y:30}}
-           transition={{
-            type: "spring",
-            damping:30,
-            stiffness: 200,
-            duration:0.8
-           }}
-           className="bg-white dark:bg-gray-800 rounded-xl shadow-xl w-full max-w-md p-6">
-            <div className="flex justify-between items-center mb-4">
-              <h1 className="text-2xl font-bold text-gray-300">Get in Touch</h1>
-              <button onClick={closeContactForm}>
-                <FiX
-                  className="h-6 w-6 text-gray-500 font-extrabold"
-                  onClick={closeContactForm}
-                />
-              </button>
-            </div>
-            {/* Input Forms */}
-            <form className="space-y-4">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-300 mb-1 "
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  placeholder="Your Name"
-                  className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-violet-500 bg-gray-700"
-                />
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="fixed inset-0 bg-black/50 backgrount-blur-sm z-50 flex items-center justify-center p-4"
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0, y: 30 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.8, opacity: 0, y: 30 }}
+              transition={{
+                type: "spring",
+                damping: 30,
+                stiffness: 200,
+                duration: 0.8,
+              }}
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-xl w-full max-w-md p-6"
+            >
+              <div className="flex justify-between items-center mb-4">
+                <h1 className="text-2xl font-bold text-gray-300">
+                  Get in Touch
+                </h1>
+                <button onClick={closeContactForm}>
+                  <FiX
+                    className="h-6 w-6 text-gray-500 font-extrabold"
+                    onClick={closeContactForm}
+                  />
+                </button>
               </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-300 mb-1 "
+              {/* Input Forms */}
+              <form className="space-y-4">
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-300 mb-1 "
+                  >
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700"
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-300 mb-1 "
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="Your Email"
+                    className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700"
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-300 mb-1 "
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    rows="4"
+                    id="name"
+                    placeholder="How can we help you?"
+                    className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-700"
+                  />
+                </div>
+                <motion.button
+                  type="submit"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="w-full px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-400 text-white font-bold rounded-lg hover:from-blue-700 hover:shadow-blue-600/50"
                 >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="Your Email"
-                  className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-violet-500 bg-gray-700"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-300 mb-1 "
-                >
-                  Message
-                </label>
-                <textarea
-                  rows = "4"
-                  id="name"
-                  placeholder="How can we help you?"
-                  className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-violet-500 bg-gray-700"
-                />
-              </div>
-              <motion.button 
-              type="submit"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="w-full px-4 py-2 bg-gradient-to-r from-violet-600 to-violet-400 text-white font-bold rounded-lg hover:from-violet-700 hover:shadow-violet-600/50">
-                 Send Message
-              </motion.button>
-            </form>
+                  Send Message
+                </motion.button>
+              </form>
+            </motion.div>
           </motion.div>
-        </motion.div>
-      )}
+        )}
       </AnimatePresence>
     </header>
   );
