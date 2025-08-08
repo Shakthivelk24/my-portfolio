@@ -32,7 +32,7 @@ const HeroSection = () => {
             duration: 1.5,
           }}
         >
-          <p className="text-[20px] md:text-[20px] lg:text-[20px] text-blue-200 max-w-2xl text-left">
+          <p className="text-[10px] md:text-[20px] lg:text-[15px] text-blue-200 max-w-2xl text-left">
             I'm Shakthi Vel, a passionate and driven Full Stack Developer with a
             strong interest in building modern, responsive web applications. I
             enjoy turning ideas into real, functional products using
@@ -56,7 +56,7 @@ const HeroSection = () => {
           delay: 2.3,
           duration: 1.5,
         }}
-        className="lg:wl-24 h-[400px] md:h-[400px] lg:h-[500px] flex justify-center items-center"
+        className="lg:w-[550px] h-[500px] md:h-[400px] w-[500px] lg:h-[500px] flex justify-center items-center"
       >
         <Spline scene="https://prod.spline.design/Jr5tyf-ZNRqajWhf/scene.splinecode" />
       </motion.div>
